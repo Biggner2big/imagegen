@@ -1,0 +1,17 @@
+{
+  "maxRetries": 3,
+  "generationTimeoutMs": 180000,
+  "downloadTimeoutMs": 60000,
+  "uploadTimeoutMs": 45000,
+  "autoQueueNewImages": false,
+  "includeSubfolders": false,
+  "outputFilenameFormat": "{base}_generated{ext}",
+  "duplicateHandling": "rename",
+  "theme": "dark",
+  "startWithWindows": false,
+  "confirmBeforeBatch": true,
+  "pauseAfterError": true,
+  "timeBetweenJobsMs": 2500,
+  "settleTimeoutMs": 8000,
+  "newChatPerJob": true
+}

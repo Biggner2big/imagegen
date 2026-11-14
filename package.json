@@ -1,0 +1,48 @@
+{
+  "name": "gemini-bulk-image-studio",
+  "version": "2.0.0",
+  "description": "Bulk image generation through the real Gemini website",
+  "main": "src/main/main.js",
+  "engines": { "node": ">=20.0.0" },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "electron-store": "^8.2.0",
+    "better-sqlite3": "^11.3.0",
+    "sharp": "^0.33.5",
+    "pino": "^9.4.0",
+    "pino-pretty": "^11.2.2",
+    "archiver": "^7.0.1",
+    "dayjs": "^1.11.13",
+    "uuid": "^10.0.0",
+    "archiver-utils": "^5.0.2",
+    "color-convert": "^2.0.1"
+  },
+  "devDependencies": {
+    "electron": "^32.2.0",
+    "electron-builder": "^25.1.7"
+  },
+  "build": {
+    "appId": "com.gemini.bulkimagestudio",
+    "productName": "Gemini Bulk Image Studio",
+    "directories": { "output": "dist" },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "config/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "icon": "assets/icons/app.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false
+    }
+  }
+}

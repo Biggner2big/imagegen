@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'" />
+  <title>Gemini Bulk Image Studio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <header class="brand">
+      <h1>GEMINI <span>BULK</span><br/>IMAGE STUDIO</h1>
+    </header>
+
+    <nav class="nav">
+      <button data-page="dashboard" class="active">Dashboard</button>
+      <button data-page="folders">Folders</button>
+      <button data-page="prompts">Prompts</button>
+      <button data-page="queue">Queue</button>
+      <button data-page="gallery">Gallery</button>
+      <button data-page="history">History</button>
+      <button data-page="settings">Settings</button>
+      <button data-page="logs">Logs</button>
+    </nav>
+
+    <div class="status-bar">
+      <div class="status-item">
+        <span class="label">Login</span>
+        <span id="loginStatus" class="value">Checking…</span>
+      </div>
+      <div class="status-item">
+        <span class="label">Gemini</span>
+        <span id="geminiStatus" class="value">—</span>
+      </div>
+    </div>
+
+    <div id="page-host" class="page-host"></div>
+  </aside>
+
+  <main class="gemini-host">
+    <!-- The Gemini WebContentsView is positioned here by the main process -->
+    <div class="gemini-placeholder">
+      <strong>Gemini</strong>
+      <span>Loading gemini.google.com…</span>
+    </div>
+  </main>
+
+  <div id="toast-host" class="toast-host" aria-live="polite"></div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
